@@ -9,17 +9,6 @@
 #include <stdlib.h>    // malloc, free 함수가 선언된 헤더 파일
 #include <string.h>
 
-/*int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
-}*/
-
-typedef struct list {
-    int size;
-    int *array;
-}list;
-
 int main()
 {
     int N;
@@ -35,17 +24,36 @@ int main()
                                     //참고하기. 띄어쓰기로 구분하여 정수형 리스트에 저장하기.
     }
     
-    for (int j=0; j<N; j++) {
-        if (pArr[j]>pArr[j+1])
-        {
-            int temp = pArr[j];
-            pArr[j] = pArr[j+1];
-            pArr[j+1] = temp;       //두 개 순서 뒤집음
-        }
-    }
-     
+    /*
     for (int k=0; k<N; k++){
-        printf("%d", pArr[k]);
+        printf("%d ", pArr[k]);
     }
+    printf("\n");
+    */ //정렬되기 전의 p를 출력
+    
+    for (int in=0; in<N; in++){
+        for (int j=0; j<N-1; j++) {
+            if (pArr[j]>pArr[j+1])
+            {
+                int temp = pArr[j];     //왼쪽값 임시 저장
+                pArr[j] = pArr[j+1];    //오른쪽값을 왼쪽으로 이동
+                pArr[j+1] = temp;       //왼쪽값을 오른쪽으로 이동
+            }
+            
+        }
+    } // 2중for문 쓰지 않으려면 어떻게 해야할까?
+    
+    /*for (int k=0; k<N; k++){
+        printf("%d ", pArr[k]);
+    }
+    printf("\n"); */ //정렬된 p를 출력
+    
+    int sum = 0;
+    for (int f=0;f<N;f++) {
+        int totTime = (N-f)*pArr[f];
+        sum = sum + totTime;
+    }
+    
+    printf("%d\n", sum);
     return 0;
 }
