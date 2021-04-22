@@ -47,5 +47,7 @@ int main()
     for (int k=0; k<N; k++){
         printf("%d", pArr[k]);
     }
+    
+    
     return 0;
 }
