@@ -1,14 +1,16 @@
 //
 //  main.c
-//  5585_change
+//  5585_change "거스름돈"
 //
 //  Created by Yeongyun Jeong on 2021/04/23.
 //
 
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
+int main() {
     // insert code here...
-    printf("Hello, World!\n");
+    
+    
+    
     return 0;
 }
